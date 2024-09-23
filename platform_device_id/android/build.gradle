@@ -2,6 +2,7 @@ group 'com.di1shuai.platform_device_id'
 version '1.0-SNAPSHOT'
 
 buildscript {
+    ext.kotlin_version = '1.9.22'
     repositories {
         google()
         jcenter()
@@ -25,6 +26,15 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
